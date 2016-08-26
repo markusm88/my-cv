@@ -13,40 +13,44 @@ import {Work} from "./work/work";
                 </div>
             </div>
         </div>
+        <!-- /.container [title] -->
         
         <div class="container bottom-space" (window:resize)="onResize($event)">
-        <div class="col-sm-6 col-md-12 col-special" *ngFor="#detail of work">
-            <div class="work-row row">
-                <div class="col-md-1">
-                    <div class="rotate left-breadcrumb lb-big" *ngIf="detail.id === 1 && !moveTitle">
-                            <h2>Arbeid</h2>
-                    </div>                    
-                </div>
-                
-                <div class="{{detail.boxClass}} work-info hover-box clr-space" (click)="showDetails(detail.id)">
-                    <div class="content-box skew">
-                        <div class="skew-justify">
-                            <div class="work-info">
-                                <h1>{{detail.title}}</h1>
-                                <h3>{{detail.subtitle}}</h3>
+            <div class="col-sm-6 col-md-12 col-special" *ngFor="#detail of work">
+                <div class="work-row row">
+                    <div class="col-md-1">
+                        <div class="rotate left-breadcrumb lb-big" *ngIf="detail.id === 1 && !moveTitle">
+                                <h2>Arbeid</h2>
+                        </div>                    
+                    </div>
+                    <!-- /.col [title on mobile] -->
+                    
+                    <div class="{{detail.boxClass}} work-info hover-box clr-space" (click)="showDetails(detail.id)">
+                        <div class="content-box skew">
+                            <div class="skew-justify">
+                                <div class="work-info">
+                                    <h1>{{detail.title}}</h1>
+                                    <h3>{{detail.subtitle}}</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="{{detail.imgClass}} work-img hover-box clr-space" (click)="showDetails(detail.id)">
-                    <div class="content-box content-box-img skew">
-                        <div class="skew-justify">
-                            
-                            <img class="img-responsive" src="{{detail.img[0].imgUrl}}" alt="Arbeid Thumbnail">
-                            <!--<div class="bg-img" style="background-image: url('{{detail.img[0].imgUrl}}')"></div>-->
+                    <!-- /.work-link-content -->
+                    
+                    <div class="{{detail.imgClass}} work-img hover-box clr-space" (click)="showDetails(detail.id)">
+                        <div class="content-box content-box-img skew">
+                            <div class="skew-justify">
+                                <img class="img-responsive" src="{{detail.img[0].imgUrl}}" alt="Arbeid Thumbnail">
+                            </div>
                         </div>
                     </div>
+                    <!-- /.work-link-img -->
                 </div>
-            </div>
-
+                <!-- /.row-->
            </div> 
+           <!-- /.col [work loop] -->
         </div>
+        <!-- /.container [work-link] -->
         `,
     directives: [ROUTER_DIRECTIVES],
     providers: [WorkService]
@@ -64,17 +68,10 @@ export class WorkComponent implements OnInit {
     getWork() {
         // TypeScrips w/ES6
         this._workService.getWork().then((work:Work[]) => this.work = work);
-        // Es5
-        // this._workService.getWork().then(function (data) {
-        //     console.log(data);
-        //
-        // });
-
-
     }
 
 
-    // Fix title display on tablet screen.
+    // Fix title display on tablets.
     // Add container to title so work will align
     onResize(event) {
         var ww;

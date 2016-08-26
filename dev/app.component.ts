@@ -4,13 +4,14 @@ import {AboutComponent} from "./content/about.component";
 import {WorkComponent} from "./content/work.component";
 import {CvComponent} from "./content/cv.component";
 import {WorkDetails} from "./content/work/workdetails.component";
+import {CvNewComponent} from "./content/cvNew.component";
 
 @Component({
     selector: 'my-app',
     template: `
-        <section id="headerBg" class="skew" [style.padding]="showNavStyle()">
+        <header id="headerBg" class="skew" [style.padding]="showNavStyle()">
             <div class="skew-justify"> 
-                <header class="container">
+                <div class="container">
                     <div class="row header-info">
                         <div class="hidden-xs hidden-sm col-md-3 col-lg-2">
                             <a [routerLink]="['About']">
@@ -19,6 +20,7 @@ import {WorkDetails} from "./content/work/workdetails.component";
                                 </div>
                             </a>
                         </div>
+                        <!-- /.col [portrait] -->
                         
                         <div class="col-xs-9 col-sm-9 col-md-7 col-lg-8">
                             <div class="my-info">
@@ -33,32 +35,38 @@ import {WorkDetails} from "./content/work/workdetails.component";
                                 </ul>
                             </div>
                         </div>
+                        <!-- /.col [pers. info] -->
                         
                         <div class="col-xs-3 col-sm-3 col-md-2">
-                        <button id="toggleNavBtn" type="button" (click)="showNav = !showNav">
-                            <span class="sr-only">Toggle navigation</span>
-                            <div id="iconBars" [class.icon-bar-rotate]="showNav">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </div>
-                        </button>
+                            <button id="toggleNavBtn" type="button" (click)="showNav = !showNav">
+                                <span class="sr-only">Toggle navigation</span>
+                                <div id="iconBars" [class.icon-bar-rotate]="showNav">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </div>
+                            </button>
                         </div>
+                        <!-- /.col [navBtn] -->
                         
                         <nav>
                             <div class="container">
                                 <ul class="row">
                                     <li class="col-sm-4"><a [routerLink]="['About']" (click)="showNav = !showNav">Om meg</a></li>
                                     <li class="col-sm-4"><a [routerLink]="['Work']" (click)="showNav = !showNav">Arbeid</a></li>
-                                    <li class="col-sm-4"><a [routerLink]="['Cv']" (click)="showNav = !showNav">CV</a></li>
+                                    <li class="col-sm-4"><a [routerLink]="['CvNew']" (click)="showNav = !showNav">CV</a></li>
                                 </ul>
                             </div>
                         </nav>
+                        <!-- /nav -->
                         
                     </div>
-                </header>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
             </div>
-		</section>
+            <!-- /.skew -->
+		</header>
 		
 		<main>
 		    <router-outlet></router-outlet>
@@ -73,6 +81,7 @@ import {WorkDetails} from "./content/work/workdetails.component";
     {path: '/ommeg', name: 'About', component: AboutComponent, useAsDefault: true},
     {path: '/arbeid', name: 'Work', component: WorkComponent},
     {path: '/cv', name: 'Cv', component: CvComponent},
+    {path: '/cvNew', name: 'CvNew', component: CvNewComponent},
     {path: '/arbeid/:id', name: 'WorkDetails', component: WorkDetails}
 ])
 
@@ -83,7 +92,7 @@ export class AppComponent implements OnInit {
 
     constructor(private _router:Router){}
 
-    // Display navigation on click - Different size depending on screen width
+    // Display navigation on click - Different size on css-padding depending on screen width
     showNavStyle() {
         if (this.showNav) {
             if (window.innerWidth < 767) {

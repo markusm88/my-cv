@@ -21,16 +21,15 @@ import {WorkService} from "./work/work.service";
                                 <div class="col-xs-9"><h3 class="black"><a href="https://www.westerdals.no/studieprogram/interaktivt-design/" target="_blank">Westerdals Oslo School of Arts, Communication and Technology (NITH)</a></h3></div>
                                 <div class="col-xs-3"><h3 class="pull-right"><br>2013-2016</h3></div>
                                 <hr class="dotted">
+                                <div class="col-sm-6"><h4>Bachelor Interaksjonsdesign</h4></div>
                                 
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-sm-6"><h4>Bachelor Interaksjonsdesign</h4></div>
-                                        <div class="col-sm-6"><button class="btn btn-mm" (click)="subjectA = !subjectA">
-                                            <div *ngIf="!subjectA">Se alle fagene <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
-                                            <div *ngIf="subjectA">Lukk <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
-                                        </button></div>
-                                    </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-mm" (click)="subjectA = !subjectA">
+                                        <div *ngIf="!subjectA">Se alle fagene <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+                                        <div *ngIf="subjectA">Lukk <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+                                    </button>
                                 </div>
+                                
                             </div>
                             
                             <div *ngIf="subjectA" class="row">

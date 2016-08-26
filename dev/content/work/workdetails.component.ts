@@ -15,33 +15,23 @@ import {TruncatePipe} from "../../pipes/truncate";
                         <div class="rotate left-breadcrumb lb-small">
                                 <h2>{{work.breadcrumb}}</h2>
                         </div>
-                        <!-- Work Nav lg-->
-                        <!--<div class="work-nav hidden-md hidden-lg">-->
-                            <!--<div class="skew">-->
-                                <!--<div class="btn-group work-nav-btns" role="group">-->
-                                    <!--<button class="btn btn-work" (click)="showDetails(workId = urlId - 1)" *ngIf="urlId > 1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>-->
-                                    <!--<button class="btn btn-work" [routerLink]="['/Work']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>-->
-                                    <!--<button class="btn btn-work" (click)="showDetails(workId = urlId + 1)" *ngIf="urlId < 6"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!-- /Work Nav-->    
                     </div>
+                    <!-- ./col-md-1 -->
                     
                     <div class="col-md-9 col-lg-8 col-md-offset-1 col-lg-offset-0 clr-space">
-                    <!-- work-nav -->
-                    <div class="work-nav">
-                        <div class="skew">
-                            <div class="btn-group work-nav-btns" role="group">
-                                <button class="btn btn-work" (click)="showDetails(workId = urlId - 1)" *ngIf="urlId > 1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
-                                <button class="btn btn-work" [routerLink]="['/Work']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>
-                                <button class="btn btn-work" (click)="showDetails(workId = urlId + 1)" *ngIf="urlId < 6"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                        <!-- work-nav -->
+                        <div class="work-nav">
+                            <div class="skew">
+                                <div class="btn-group work-nav-btns" role="group">
+                                    <button class="btn btn-work" (click)="showDetails(workId = urlId - 1)" *ngIf="urlId > 1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+                                    <button class="btn btn-work" [routerLink]="['/Work']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>
+                                    <button class="btn btn-work" (click)="showDetails(workId = urlId + 1)" *ngIf="urlId < 6"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- /work-nav -->
+                        <!-- /work-nav -->
                     
-                    <!-- work-nav -->
+                        <!-- work-info -->
                         <div class="content-box skew">
                             <div class="skew-justify">
                                 <div class="work-details-info">
@@ -52,20 +42,11 @@ import {TruncatePipe} from "../../pipes/truncate";
                                 </div>
                             </div>
                         </div>
+                        <!-- /work-info -->
                     </div>
+                    <!-- /.col [work-info-wrapper] -->
                     
-                    <!-- Work Nav lg-->
-                    <!--<div class="work-nav hidden-xs hidden-sm hidden-md col-lg-3">-->
-                        <!--<div class="skew">-->
-                            <!--<div class="btn-group work-nav-btns" role="group">-->
-                                <!--<button class="btn btn-work" (click)="showDetails(workId = urlId - 1)" *ngIf="urlId > 1"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>-->
-                                <!--<button class="btn btn-work" [routerLink]="['/Work']"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></button>-->
-                                <!--<button class="btn btn-work" (click)="showDetails(workId = urlId + 1)" *ngIf="urlId < 6"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!-- /Work Nav-->
-                    
+                    <!-- work-content -->
                      <div class="col-md-9 col-lg-10 col-md-offset-3 col-lg-offset-2 work-img clr-space">
                         <div class="content-box skew"><div class="skew-justify">
                             <div class="img-details" *ngFor="#img of work.img">
@@ -76,11 +57,13 @@ import {TruncatePipe} from "../../pipes/truncate";
                             </div>
                         </div></div>
                     </div>
+                    <!-- /.col [work-content] -->
                 </div>
                 <!--/row-->                                                              
                 
             </div><!--/cont-->
             
+            <!-- work-nav -->
             <div class="container bottom-space">
                 <div class="row work-nav">
                     <div class="skew">
@@ -92,6 +75,7 @@ import {TruncatePipe} from "../../pipes/truncate";
                     </div>
                 </div>  
             </div>
+            <!-- /work-nav -->
         `,
     directives: [ROUTER_DIRECTIVES],
     providers: [WorkService],

@@ -22,15 +22,12 @@ import {CvComponent} from "./cv.component";
                             <p>Nylig utdannet ved Westerdals Oslo ACT (Tidligere NITH), men en Bachelorgrad i Interaktivt Design. </p>
                             <p>Ved siden av studiene driver jeg mitt eget firma <a href="http://morlanddesign.no"> Mørland Design </a>.
                             Her driver jeg med varierte prosjekt, hovedsaklig utvikling av nettsider.</p>
-                             
                              <p>Gjennom min tid på Westerdals, og oppdrag fra mitt firma, har jeg opparbeidet meg variert kompestanse innen UI/UX design og teknikker, samt front-end utvikling.</p>
-                            
-                            
-                            
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- /.row [About-textbox] -->
             
             <div class="row">
                 <a [routerLink]="['/Work']">
@@ -57,6 +54,7 @@ import {CvComponent} from "./cv.component";
                     </div>
                 </a>
             </div>
+            <!-- /.row [Work-link] -->
             
             <div class="row">
                 <a [routerLink]="['/Cv']">
@@ -77,13 +75,14 @@ import {CvComponent} from "./cv.component";
                                         </div>
                                     </div>
                                 </div>
-                                <div style="height: 0px"></div>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
+            <!-- /.row [CV-link] -->
         </div>
+        <!-- /.container -->
         `,
     directives: [ROUTER_DIRECTIVES]
 })
