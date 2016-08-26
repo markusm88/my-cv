@@ -1,0 +1,210 @@
+/* remove outline */
+a:focus,
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, button:focus {
+  outline: none;
+}
+
+/* Work nav */
+.work-nav {
+  //text-align: center;
+  //margin-bottom: 80px;
+  text-align: right;
+  margin-top: -20px;
+  margin-bottom: -5px;
+  //padding: 0 15px;
+  .work-nav-btns {
+    overflow: hidden;
+    display: inline-block;
+    border: 5px solid #f8e435;
+  }
+  .btn-work {
+    border-radius: 0;
+    background: white;
+    border: none;
+    border-right: 5px solid #f8e435;
+    padding: 15px 20px;
+    color: #f8e435;
+    font-size: 18px;
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+  }
+  .btn-work:nth-last-child(1) {
+    border: none;
+  }
+
+  .btn-work:hover {
+    background: #f8e435;
+    color: #FFFFFF;
+  }
+}
+
+/* Main */
+nav {
+  position: absolute;
+  top: -72px;
+  left: 0;
+  background: #f8e435;
+  width: 100%;
+  ul {
+    margin: auto;
+  }
+  li {
+    //display: inline-block;
+    //width: 33%;
+    text-align: center;
+    a {
+      display: block;
+      padding: 20px;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+    a:hover {
+      color: #858490;
+    }
+  }
+}
+
+/* NavToggle effects */
+#toggleNavBtn {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 9px 0px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+#iconBars {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Toggle this class on click */
+.icon-bar-rotate {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.icon-bar {
+  display: block;
+  width: 50px;
+  height: 5px;
+  border-radius: 1px;
+  position: relative;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  background: #f8e435;
+}
+
+#toggleNavBtn .icon-bar + .icon-bar {
+  margin-top: 9px;
+}
+
+/* Iconbar on add class anim */
+.icon-bar-rotate .icon-bar:nth-of-type(1) {
+  position: relative;
+  top: 13px;
+}
+
+.icon-bar-rotate .icon-bar:nth-of-type(2) {
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.icon-bar-rotate .icon-bar:nth-of-type(3) {
+  opacity: 0;
+}
+
+/* NavToggle on tab/mobile */
+@media screen and (max-width: 767px) {
+  #navWrapper {
+    background: #444;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    height: 100vh;
+    padding: 5px 20px 10px;
+    text-align: right;
+    border-bottom-left-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.3s;
+  }
+  /* Toggle this class on click */
+  .toggle-nav {
+    right: -100% !important;
+  }
+
+  nav {
+    top: -245px;
+  }
+}
+
+/* ArrowBtn */
+#arrowBtn {
+  padding: 60px 0;
+  margin-left: -20px;
+  .icon-bar + .icon-bar {
+    margin: 5px 0;
+  }
+}
+
+.arrow:nth-of-type(1) {
+  width: 30px;
+  -moz-transform: translate(25px, 1px) rotate(45deg);
+  -webkit-transform: translate(25px, 1px) rotate(45deg);
+  -o-transform: translate(25px, 1px) rotate(45deg);
+  -ms-transform: translate(25px, 1px) rotate(45deg);
+  transform: translate(25px, 1px) rotate(45deg);
+}
+
+.arrow:nth-of-type(2) {
+}
+
+.arrow:nth-of-type(3) {
+  width: 30px;
+  -moz-transform: translate(25px, -1px) rotate(-45deg);
+  -webkit-transform: translate(25px, -1px) rotate(-45deg);
+  -o-transform: translate(25px, -1px) rotate(-45deg);
+  -ms-transform: translate(25px, -1px) rotate(-45deg);
+  transform: translate(25px, -1px) rotate(-45deg);
+}
+
+@media screen and (min-width: 767px) {
+  /* Iconbar add hover effect on desktop */
+  #toggleNavBtn:hover .icon-bar:nth-of-type(1) {
+    position: relative;
+    top: 13px;
+  }
+  #toggleNavBtn:hover .icon-bar:nth-of-type(2) {
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  #toggleNavBtn:hover .icon-bar:nth-of-type(3) {
+    opacity: 0;
+  }
+
+  .hover-box:hover #arrowBtn .arrow {
+    background: #FFFFFF;
+  }
+  .hover-box:hover #arrowBtn .arrow:nth-of-type(1) {
+    -moz-transform: translate(25px, 1px) rotate(405deg);
+    -webkit-transform: translate(25px, 1px) rotate(405deg);
+    -o-transform: translate(25px, 1px) rotate(405deg);
+    -ms-transform: translate(25px, 1px) rotate(405deg);
+    transform: translate(25px, 1px) rotate(405deg);
+  }
+
+  .hover-box:hover #arrowBtn .arrow:nth-of-type(3) {
+    -moz-transform: translate(25px, -1px) rotate(-405deg);
+    -webkit-transform: translate(25px, -1px) rotate(-405deg);
+    -o-transform: translate(25px, -1px) rotate(-405deg);
+    -ms-transform: translate(25px, -1px) rotate(-405deg);
+    transform: translate(25px, -1px) rotate(-405deg);
+  }
+}
