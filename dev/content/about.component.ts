@@ -57,7 +57,7 @@ import {CvComponent} from "./cv.component";
             <!-- /.row [Work-link] -->
             
             <div class="row">
-                <a [routerLink]="['/Cv']">
+                <a [routerLink]="['/CvNew']">
                     <div class="col-xs-9 col-sm-5 col-md-3 col-md-offset-5 col-lg-offset-4 about-box hover-box clr-space">
                         <div class="content-box skew">
                             <div class="skew-justify">
